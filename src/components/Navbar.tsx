@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "./Logo";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -21,8 +22,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           
           {/* Logo */}
-          <Link href="/" className="font-bold text-lg tracking-tight">
-            Ibrahima<span className="text-violet-400">.K</span>
+          <Link href="/" className="hover:opacity-90 transition-opacity">
+            <Logo />
           </Link>
 
           {/* Desktop Menu */}
