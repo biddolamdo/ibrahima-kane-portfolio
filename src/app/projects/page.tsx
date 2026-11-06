@@ -2,6 +2,14 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "Homelab d'Entreprise Sécurisé",
+    description: "Simulation complète d'un SI (PME) : pfSense, Active Directory, DNS et DHCP sous environnement virtualisé.",
+    category: "Réseau & Sécu",
+    tech: ["pfSense", "AD DS", "VirtualBox", "Windows Server"],
+    year: "2026",
+    visual: "homelab",
+  },
+  {
     title: "Samba le Berger",
     description:
       "Projet de hackathon UNCHK – jeu éducatif autour de l'élevage et de la gestion de ressources.",
@@ -100,6 +108,24 @@ function ProjectVisual({ type }: { type: string }) {
       </div>
     );
   }
+
+      if (type === "homelab") {
+      return (
+        <div className="h-40 bg-gradient-to-br from-slate-900 to-blue-900/40 relative flex items-center justify-center overflow-hidden">
+          <div className="flex gap-4 opacity-40 scale-75">
+            <div className="w-16 h-20 bg-slate-800 border-2 border-blue-500 rounded-lg flex flex-col items-center p-2">
+              <div className="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center text-[10px]">🛡️</div>
+              <div className="mt-2 text-[8px] text-white">pfSense</div>
+            </div>
+            <div className="self-center h-px w-8 bg-blue-500/50" />
+            <div className="w-16 h-20 bg-slate-800 border-2 border-orange-500 rounded-lg flex flex-col items-center p-2">
+              <div className="w-8 h-8 rounded bg-orange-500/20 flex items-center justify-center text-[10px]">🖥️</div>
+              <div className="mt-2 text-[8px] text-white">AD-DS</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
 
   // sysadmin
   return (
